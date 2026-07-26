@@ -1,7 +1,24 @@
 aid: everyme
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/everyme.png
 name: everyme
-description: everyme is a company surfaced as a portfolio company of slow-ventures and added to the API
-  Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: 'everyme was surfaced as a portfolio company of slow-ventures and added to the API Evangelist
+  network as a stub for enrichment. Enrichment probing on 2026-07-20 found no operating company surface:
+  everyme.com no longer resolves to a company website but redirects to a GoDaddy aftermarket listing
+  offering the domain for sale, its nameservers are Afternic (a domain broker), and its DNS publishes a
+  null MX record and an SPF policy of "v=spf1 -all" indicating the domain sends no mail. There is no
+  developer portal, documentation, API, or event surface to catalog. This profile is retained as a
+  historical lead record rather than an active provider.'
 url: https://raw.githubusercontent.com/api-evangelist/everyme/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,11 +26,20 @@ x-backed-by:
 - slow-ventures
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-status: defunct
+x-status-evidence:
+- everyme.com HTTP 307 -> https://forsale.godaddy.com/forsale/everyme.com (domain-for-sale listing)
+- nameservers ns1.afternic.com / ns2.afternic.com (domain brokerage)
+- null MX record ("0 .") and SPF "v=spf1 -all" — domain sends and receives no mail
+- all paths return HTTP 200 with a JS redirect to /lander (parking soft-404); no real security.txt
+- docs.everyme.com and api.everyme.com do not resolve
+x-status-checked: '2026-07-20'
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
+- Defunct
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -21,5 +47,11 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
-- type: Website
-  url: https://everyme.com
+- type: DomainListing
+  name: everyme.com offered for sale (GoDaddy aftermarket)
+  url: https://forsale.godaddy.com/forsale/everyme.com
+x-enrichment:
+  date: '2026-07-20'
+  status: nochange
+  artifacts_added: 0
+  pass: local-v1
