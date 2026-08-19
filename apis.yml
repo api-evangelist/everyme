@@ -34,7 +34,7 @@ x-status-evidence:
 - all paths return HTTP 200 with a JS redirect to /lander (parking soft-404); no real security.txt
 - docs.everyme.com and api.everyme.com do not resolve
 x-status-checked: '2026-07-20'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 created: '2026-07-17'
 modified: '2026-07-20'
 tags:
