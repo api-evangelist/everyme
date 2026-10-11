@@ -1,0 +1,11 @@
+[
+  {
+    "repo": "everyme",
+    "captured_at": "2026-10-11T185432",
+    "source_url": "https://godaddy.com",
+    "source_type": "root-domain",
+    "file": "everyme-2026-10-11T185432.png",
+    "bytes": 25560,
+    "capture": "playwright-local"
+  }
+]
